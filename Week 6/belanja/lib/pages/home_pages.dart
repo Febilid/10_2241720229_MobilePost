@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
 
   final List<Item> items = [
     Item(
@@ -68,17 +68,16 @@ class HomePage extends StatelessWidget {
 
   Widget _buildItemImage(Item item) {
     return Hero(
-      tag: item.name,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(8),
-        child: Image.asset(
-          item.image,
-          width: 100,
-          height: 100,
-          fit: BoxFit.cover,
-        ),
-      )
-    );
+        tag: item.name,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            item.image,
+            width: 100,
+            height: 100,
+            fit: BoxFit.cover,
+          ),
+        ));
   }
 
   Widget _buildItemDetails(Item item) {

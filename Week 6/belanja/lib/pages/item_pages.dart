@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 class ItemPage extends StatelessWidget {
   final Item item;
 
-  const ItemPage({required this.item, Key? key}) : super(key: key);
+  const ItemPage({required this.item, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +43,16 @@ class ItemPage extends StatelessWidget {
 
   Widget _buildItemImage(Item item) {
     return Hero(
-      tag: item.name,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(8.0),
-        child: Image.asset(
-          item.image,
-          fit: BoxFit.cover,
-          height: 300,
-          width: 300,
-        ),
-      )
-    );
+        tag: item.name,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(8.0),
+          child: Image.asset(
+            item.image,
+            fit: BoxFit.cover,
+            height: 300,
+            width: 300,
+          ),
+        ));
   }
 
   Widget _buildPriceAndStock(Item item) {

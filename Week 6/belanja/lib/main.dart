@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  final GoRouter _router = GoRouter(
+  final GoRouter router = GoRouter(
     routes: [
       GoRoute(
         path: '/',
@@ -21,13 +21,13 @@ void main() {
     ],
   );
 
-  runApp(MyApp(router: _router));
+  runApp(MyApp(router: router));
 }
 
 class MyApp extends StatelessWidget {
   final GoRouter router;
 
-  const MyApp({required this.router, Key? key}) : super(key: key);
+  const MyApp({required this.router, super.key});
 
   @override
   Widget build(BuildContext context) {
